@@ -1,0 +1,7 @@
+*           text=auto
+
+# These files are text and should be normalized (convert crlf to lf)
+*.py               text
+*.txt             text
+*.yaml            text
+*.md              text
