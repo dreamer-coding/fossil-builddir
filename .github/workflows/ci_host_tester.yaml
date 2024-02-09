@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements.txt
     - name: Run Tests
       run: |
-          python entry.py test
+          python fossil-builder.py test
 
   host_windows:
     strategy:
@@ -46,7 +46,7 @@ jobs:
           pip install -r requirements.txt
     - name: Run Tests
       run: |
-          python entry.py test
+          python fossil-builder.py test
 
   host_ubuntu:
     strategy:
@@ -64,4 +64,4 @@ jobs:
           pip install -r requirements.txt
     - name: Run Tests
       run: |
-          python entry.py test
+          python fossil-builder.py test
