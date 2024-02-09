@@ -16,13 +16,13 @@ Purpose:
 
 For more information on the Native Python Application and the Trilobite Coder Lab project, please refer to the project documentation and website.
 """
-from code.app import function1, function2
+import tkinter as tk
+from code.app import MesonBuildGUI
 
 def main():
-    result1 = function1()
-    result2 = function2()
-    print("Result from function1:", result1)
-    print("Result from function2:", result2)
+    root = tk.Tk()
+    app = MesonBuildGUI(root)
+    root.mainloop()
 
 if __name__ == "__main__":
     main()
