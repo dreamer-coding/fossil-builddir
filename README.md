@@ -1,10 +1,10 @@
-# Python Project Template Readme
+# Fossil Build GUI
 
-Welcome to the **Python Project Template** repository! This README offers user-friendly instructions for setting up, running, and contributing to a Python project. The project is designed for Python 3.7 and above, and it includes guidelines for various development tasks. 
+The Meson Build GUI stands as a comprehensive graphical user interface (GUI) tool designed to streamline and enhance the process of building Meson projects. Developed using the Tkinter library in Python, this tool provides an intuitive and user-friendly interface, minimizing the complexities associated with setting up, compiling, testing, and installing Meson projects.
 
 ## Who is This For?
 
-This guide is aimed at developers of all skill levels who want to work on Python projects. Basic familiarity with Python, command-line interfaces, and project organization is assumed.
+This GUI is intended for use with Meson projects and assumes a basic understanding of Meson build systems. Always refer to the Meson documentation for comprehensive project information and guidelines.
 
 ## Prerequisites
 
@@ -16,22 +16,17 @@ Before you get started, ensure that you have the following prerequisites:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/dreamer-coding-555/project-app-py.git
-   cd project-app-py
+   git clone https://github.com/dreamer-coding-555/fossil-builder.git
+   cd fossil-builder
    ```
 
-2. **Install Project Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Running the Project** (Optional Step)
+2. **Running the Project** (Optional Step)
 
 ```bash
-python entry.py
+python fossil-builder.py
 ```
 
-4. **Installing the Project**
+3. **Installing the Project**
 
 ```bash
 python setup.py install
@@ -39,20 +34,16 @@ python setup.py install
 
 ## Contributing
 
-If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/dreamer-coding-555/project-app-py). Be sure to review the guidelines provided on the project's GitHub page.
+If you're interested in contributing to this project, please consider opening pull requests or creating issues on the [GitHub repository](https://github.com/dreamer-coding-555/fossil-builder). Be sure to review the guidelines provided on the project's GitHub page.
 
 ## Feedback and Support
 
-If you encounter issues, have questions, or want to provide feedback, please don't hesitate to open an issue on the [GitHub repository](https://github.com/dreamer-coding-555/project-app-py/issues).
+If you encounter issues, have questions, or want to provide feedback, please don't hesitate to open an issue on the [GitHub repository](https://github.com/dreamer-coding-555/fossil-builder/issues).
 
 ## License
 
-This project is licensed under the [Apache License 2.0](LICENSE).
+This project is licensed under the [Mozilla Public License](LICENSE).
 
 ---
 
 Thank you for choosing this Python project template. Happy coding and building amazing projects!
-
-## Contact
-
-If you have questions or want to get in touch regarding programming solutions, you can find a way to contact me on my [website](https://trilobite.home.blog/contact/).
