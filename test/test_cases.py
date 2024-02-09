@@ -17,14 +17,83 @@ Purpose:
 For more information on the Native Python Application and the Trilobite Coder Lab project, please refer to the project documentation and website.
 """
 import unittest
-from code.app import function1, function2
+from unittest.mock import patch, MagicMock
+from tkinter import Tk
+from code.app import MesonBuildGUI, SetupDialog
 
-class TestProject(unittest.TestCase):
-    def test_function1(self):
-        self.assertEqual(function1(), "Hello from function1 in app module")
+class TestMesonBuildGUI(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.root = Tk()
+        cls.app = MesonBuildGUI(cls.root)
 
-    def test_function2(self):
-        self.assertEqual(function2(), "Hello from function2 in app module")
+    @classmethod
+    def tearDownClass(cls):
+        cls.root.destroy()
 
-if __name__ == "__main__":
+    def setUp(self):
+        # Mock the terminal's insert method
+        self.app.update_terminal = MagicMock()
+
+    def test_run_setup_thread(self):
+        with patch('subprocess.Popen') as mock_popen:
+            # Mock the subprocess.Popen object
+            mock_process = MagicMock()
+            mock_process.stdout.readline.return_value = "Mock Output"
+            mock_process.communicate.return_value = ("", "")
+            mock_popen.return_value = mock_process
+
+            # Run the setup thread
+            self.app.run_setup_thread("build_dir", "--option=value")
+
+            # Assertions
+            mock_popen.assert_called_once_with(["meson", "setup", "build_dir", "--option=value"], cwd="source_dir")
+            self.app.update_terminal.assert_called_with("Mock Output")
+
+    def test_run_compile_thread(self):
+        with patch('subprocess.Popen') as mock_popen:
+            # Mock the subprocess.Popen object
+            mock_process = MagicMock()
+            mock_process.stdout.readline.return_value = "Mock Output"
+            mock_process.communicate.return_value = ("", "")
+            mock_popen.return_value = mock_process
+
+            # Run the compile thread
+            self.app.run_compile_thread()
+
+            # Assertions
+            mock_popen.assert_called_once_with(["ninja", "-C", "build_dir"], cwd="build_dir")
+            self.app.update_terminal.assert_called_with("Mock Output")
+
+    def test_run_test_thread(self):
+        with patch('subprocess.Popen') as mock_popen:
+            # Mock the subprocess.Popen object
+            mock_process = MagicMock()
+            mock_process.stdout.readline.return_value = "Mock Output"
+            mock_process.communicate.return_value = ("", "")
+            mock_popen.return_value = mock_process
+
+            # Run the test thread
+            self.app.run_test_thread()
+
+            # Assertions
+            mock_popen.assert_called_once_with(["ninja", "-C", "build_dir", "test"], cwd="build_dir")
+            self.app.update_terminal.assert_called_with("Mock Output")
+
+    def test_run_install_thread(self):
+        with patch('subprocess.Popen') as mock_popen:
+            # Mock the subprocess.Popen object
+            mock_process = MagicMock()
+            mock_process.stdout.readline.return_value = "Mock Output"
+            mock_process.communicate.return_value = ("", "")
+            mock_popen.return_value = mock_process
+
+            # Run the install thread
+            self.app.run_install_thread()
+
+            # Assertions
+            mock_popen.assert_called_once_with(["ninja", "-C", "build_dir", "install"], cwd="build_dir")
+            self.app.update_terminal.assert_called_with("Mock Output")
+
+if __name__ == '__main__':
     unittest.main()
