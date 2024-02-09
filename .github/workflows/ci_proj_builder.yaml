@@ -29,7 +29,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests (Minimum Python Version)
       run: |
-        python entry.py test
+        python fossil-builder.py test
 
   latest_python:
     runs-on: ubuntu-latest
@@ -44,4 +44,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests (Latest Python Version)
       run: |
-        python entry.py test
+        python fossil-builder.py test
