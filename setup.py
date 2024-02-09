@@ -1,31 +1,25 @@
-"""
-Module: setup.py
-Description: This Python source file is part of the Native Python Application, which is a project under the Trilobite Coder Lab.
-
-Author:
-- Name: Michael Gene Brockus (Dreamer)
-- Email: michaelbrockus@gmail.com
-- Website: https://trilobite.code.blog
-
-License: This software is released under the Apache License 2.0. Please refer to the LICENSE file for more details.
-
-Purpose:
-- This Python source file contains the implementation for the Native Python Application.
-- It includes the main logic and functionality required for the application to run.
-- Review and modify this file as needed for your specific project requirements.
-
-For more information on the Native Python Application and the Trilobite Coder Lab project, please refer to the project documentation and website.
-"""
+#
+# ==============================================================================
+# Author: Michael Gene Brockus (Dreamer)
+# Email: michaelbrockus@gmail.com
+# Organization: Fossil Logic
+# Description: 
+#     This file is part of the Fossil Logic project, where innovation meets
+#     excellence in software development. Michael Gene Brockus, also known as
+#     "Dreamer," is a dedicated contributor to this project. For any inquiries,
+#     feel free to contact Michael at michaelbrockus@gmail.com.
+# ==============================================================================
+#
 from setuptools import setup, find_packages
 
 setup(
-    name="project-app-py",
+    name="fossil-builddir",
     version="0.1.0",
-    author="Your Name",
+    author="Michael Gene Brockus (Dreamer)",
     author_email="michaelbrockus@gmail.com",
-    description="A description of your project",
-    long_description="Detailed description of your project",
-    url="https://github.com/dreamer-coding-555/project-app-py",
+    description="Meson build GUI by Fossil Logic",
+    long_description="The Meson Build GUI stands as a comprehensive graphical user interface (GUI) tool designed to streamline and enhance the process of building Meson projects. Developed using the Tkinter library in Python, this tool provides an intuitive and user-friendly interface, minimizing the complexities associated with setting up, compiling, testing, and installing Meson projects.",
+    url="https://github.com/dreamer-coding-555/fossil-builddir",
     packages=find_packages(),  # Automatically find and include all packages
     classifiers=[
         "Intended Audience :: Developers",
